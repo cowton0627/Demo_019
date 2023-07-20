@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua6-nb-Epm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua6-nb-Epm">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="127.66666666666669" y="366" width="120" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Ld2-MU-R4f"/>
-                                    <constraint firstAttribute="width" constant="120" id="ypZ-oA-r4Y"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ypZ-oA-r4Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Autton"/>
@@ -29,19 +29,19 @@
                                     <action selector="aBtnPressed:" destination="aru-Sh-Muh" eventType="touchUpInside" id="3TY-Ca-2dz"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="anter something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlJ-Bh-JaW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="anter something" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlJ-Bh-JaW">
                                 <rect key="frame" x="107.66666666666669" y="324" width="160" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="Wno-ZQ-BCH"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="Wno-ZQ-BCH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTg-w0-wyR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTg-w0-wyR">
                                 <rect key="frame" x="107.66666666666669" y="191" width="160" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Pu1-a3-XlI"/>
-                                    <constraint firstAttribute="width" constant="160" id="vj3-lO-1Ac"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="vj3-lO-1Ac"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -78,10 +78,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bnter something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7j-TA-ahQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bnter something" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7j-TA-ahQ">
                                 <rect key="frame" x="107.66666666666669" y="324" width="160" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="bA5-YQ-Lry"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="bA5-YQ-Lry"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -90,19 +90,19 @@
                                 <rect key="frame" x="127.66666666666669" y="366" width="120" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="WjB-ZE-wKg"/>
-                                    <constraint firstAttribute="width" constant="120" id="lar-2D-SOp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="lar-2D-SOp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="zrC-tx-NRA" kind="unwind" unwindAction="uwindToA:" id="ANC-8V-zXB"/>
+                                    <segue destination="zrC-tx-NRA" kind="unwind" unwindAction="uwindToA:" id="7Uf-0C-lYS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8j-dc-l6Y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Babel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8j-dc-l6Y">
                                 <rect key="frame" x="107.66666666666669" y="191" width="160" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="j5w-ct-zcz"/>
-                                    <constraint firstAttribute="width" constant="160" id="pCg-ig-ewa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="pCg-ig-ewa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -137,7 +137,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ua6-nb-Epm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B1Y-g5-nMs">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

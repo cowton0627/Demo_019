@@ -8,18 +8,17 @@
 import UIKit
 
 class BViewController: UIViewController {
-    // MARK: Properties
+    
+    // MARK: - Properties
     @IBOutlet weak var bTextField: UITextField! {
-        didSet {
-            bTextField.delegate = self
-        }
+        didSet { bTextField.delegate = self }
     }
     @IBOutlet weak var bLabel: UILabel!
     
     var name = ""
-    var age = 0
+//    var age = 0
     
-    // MARK: allocate & deallocate
+    // MARK: - allocate & deallocate
     required init?(coder: NSCoder) {
         print("===> BViewController init")
         super.init(coder: coder)
@@ -28,7 +27,8 @@ class BViewController: UIViewController {
     deinit {
         print("<=== BViewController Deinit")
     }
-    // MARK: Life Cycle
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBlabel()
@@ -40,44 +40,46 @@ class BViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {}
     override func viewDidDisappear(_ animated: Bool) {}
     
-    // MARK: Private Funcs
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let vc = segue.destination as? AViewController,
+//           let text = bTextField.text {
+//            vc.aLabel.text = text
+//        }
+//    }
+    
+    // MARK: - Private Funcs
     private func setupBlabel() {
         bLabel.text = name
     }
     
-    // MARK: IBActions
-    // 事實是我們可以更簡單地調用unwindSegue
+    // MARK: - IBActions
+    /* 回上頁，可以用 IBAction 去 pop 或 dismiss
+     * 最簡單的方式是在 storyboard 中，透過 Exit 的方式去產生 Button action
+     * 而在前一個頁面需加入 @IBAction func uwindToA(_ segue: UIStoryboardSegue) {}
+     */
     @IBAction func backBtnPressed(_ sender: UIButton) {
-        // 與任何一種ViewController推出來的回上頁
-//        navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
         
-        // 與present湊一對的回上頁
+        // present 用的回上頁
 //        dismiss(animated: true, completion: nil)
     }
+    
+//    @IBSegueAction func segueAction(_ coder: NSCoder) -> AViewController? {
+//        let vc = AViewController(coder: coder)
+//        if let text = bTextField.text {
+//            vc?.aLabel.text = text
+//        }
+//        return vc
+//    }
     
 }
 
 // MARK: TextFiledDelegate
 extension BViewController: UITextFieldDelegate {
+    // 按下 return 收鍵盤
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 //        textField.resignFirstResponder()
         textField.endEditing(true)
     }
 }
 
-// 以下寫錯的, 不要管它
-// 1. 非產生一個新的A, 不用prepare, 且segue.source是在unwind func裡面寫才對
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let controller = segue.source as! AViewController
-//        controller.age = bTextField.text!
-//        controller.aLabel.text = "\(controller.age)"
-// 2. 理由同上, 若是連到三個controller便可用比對segueID的方式去跳轉頁面
-//        if segue.identifier == "fromAtoB" {
-//            let controller = segue.source as! AViewController
-//            controller.aLabel.text = bTextField.text!
-//        }
-//    }
-// 3. A並不需要unwindToB
-//    @IBAction func backToA(_ segue: UIStoryboardSegue) {
-//
-//    }
