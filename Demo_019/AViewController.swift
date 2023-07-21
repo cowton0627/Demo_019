@@ -31,6 +31,12 @@ class AViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: - 設定監聽
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(received),
+                                               name: .beeObserver,
+                                               object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {}
     override func viewWillLayoutSubviews() {}
@@ -45,7 +51,6 @@ class AViewController: UIViewController {
 //        if let controller = segue.destination as? BViewController {
 //            controller.name = aTextField.text ?? ""
 //        }
-
     }
     
     // MARK: - IBActions
@@ -54,14 +59,20 @@ class AViewController: UIViewController {
          *  performSegue 則是由 VC 拉線 show VC，由 Button 的 IBAction 透過 Segue ID
          *  來達到轉場的目的。
          */
-//        performSegue(withIdentifier: "fromAtoB", sender: nil)
+        performSegue(withIdentifier: "fromAtoB", sender: nil)
+        // MARK: - 傳值
+        guard let text = aTextField.text else { return }
+        NotificationCenter.default.post(name: .aceObserver,
+                                        object: nil,
+                                        userInfo: ["text": text])
 
+        
         // 用 show 做轉場時，會自動嵌入 navigationController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = storyboard.instantiateViewController(withIdentifier: "\(BViewController.self)") as? BViewController {
-            vc.name = aTextField.text ?? ""
-            show(vc, sender: nil)
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let vc = storyboard.instantiateViewController(withIdentifier: "\(BViewController.self)") as? BViewController {
+//            vc.name = aTextField.text ?? ""
+//            show(vc, sender: nil)
+//        }
        
         // 用 present 做轉場時，不會自動嵌入 navigationController
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -82,15 +93,23 @@ class AViewController: UIViewController {
         
     }
     
+    // MARK: - 接值
+    @objc func received(sender: Notification) {
+//        let text = sender.userInfo?["text"] as? String
+        let textField = sender.object as? UITextField
+        let text = textField?.text
+        aLabel.text = text
+    }
+    
     /*  需研究轉場的生命週期，很多時候當 VC 尚未 present 是不能找到它的 property
      *  但 VC 排進 Navigation Controller 的 Stack 中，即便未 show，
      *  此時仍可找到它的 property
      */
     @IBAction func uwindToA(_ segue: UIStoryboardSegue) {
-        if let vc = segue.source as? BViewController,
-           let text = vc.bTextField.text {
-            aLabel.text = text
-        }
+//        if let vc = segue.source as? BViewController,
+//           let text = vc.bTextField.text {
+//            aLabel.text = text
+//        }
     }
     
     
@@ -112,3 +131,10 @@ extension AViewController: UITextFieldDelegate {
 //        textField.endEditing(true)
     }
 }
+
+extension Notification.Name {
+    static let aceObserver = Notification.Name("AceObserver")
+    static let beeObserver = Notification.Name("BeeObserver")
+}
+
+

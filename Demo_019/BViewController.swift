@@ -22,6 +22,12 @@ class BViewController: UIViewController {
     required init?(coder: NSCoder) {
         print("===> BViewController init")
         super.init(coder: coder)
+        
+        // MARK: - 設定監聽
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(received),
+                                               name: .aceObserver,
+                                               object: nil)
     }
     
     deinit {
@@ -47,6 +53,12 @@ class BViewController: UIViewController {
 //        }
 //    }
     
+    // MARK: - 接值
+    @objc func received(sender: Notification) {
+        let text = sender.userInfo?["text"] as? String
+        name = text!
+    }
+    
     // MARK: - Private Funcs
     private func setupBlabel() {
         bLabel.text = name
@@ -62,6 +74,13 @@ class BViewController: UIViewController {
         
         // present 用的回上頁
 //        dismiss(animated: true, completion: nil)
+        
+        // MARK: -  傳值
+//        guard let text = bTextField.text else { return }
+//        NotificationCenter.default.post(name: .beeObserver,
+//                                        object: nil,
+//                                        userInfo: ["text": text])
+        NotificationCenter.default.post(name: .beeObserver, object: bTextField)
     }
     
 //    @IBSegueAction func segueAction(_ coder: NSCoder) -> AViewController? {

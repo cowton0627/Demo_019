@@ -95,7 +95,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="zrC-tx-NRA" kind="unwind" unwindAction="uwindToA:" id="7Uf-0C-lYS"/>
+                                    <action selector="backBtnPressed:" destination="32D-bW-wjy" eventType="touchUpInside" id="Zuo-d8-QmK"/>
+                                    <segue destination="zrC-tx-NRA" kind="unwind" unwindAction="uwindToA:" id="okE-HV-59X"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Babel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8j-dc-l6Y">
