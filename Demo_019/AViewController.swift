@@ -7,12 +7,11 @@
 
 import UIKit
 
+/// 第一頁
 class AViewController: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var aTextField: UITextField! {
-        didSet { aTextField.delegate = self }
-    }
+    @IBOutlet weak var aTextField: UITextField! { didSet { aTextField.delegate = self } }
     @IBOutlet weak var aLabel: UILabel!
     
     var name = ""

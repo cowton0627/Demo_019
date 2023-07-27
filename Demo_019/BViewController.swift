@@ -7,12 +7,11 @@
 
 import UIKit
 
+/// 第二頁
 class BViewController: UIViewController {
     
     // MARK: - Properties
-    @IBOutlet weak var bTextField: UITextField! {
-        didSet { bTextField.delegate = self }
-    }
+    @IBOutlet weak var bTextField: UITextField! { didSet { bTextField.delegate = self } }
     @IBOutlet weak var bLabel: UILabel!
     
     var name = ""
@@ -30,10 +29,6 @@ class BViewController: UIViewController {
                                                object: nil)
     }
     
-    deinit {
-        print("<=== BViewController Deinit")
-    }
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +40,10 @@ class BViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {}
     override func viewWillDisappear(_ animated: Bool) {}
     override func viewDidDisappear(_ animated: Bool) {}
+    
+    deinit {
+        print("<=== BViewController Deinit")
+    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if let vc = segue.destination as? AViewController,
