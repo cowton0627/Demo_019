@@ -104,7 +104,7 @@ class AViewController: UIViewController {
      *  但 VC 排進 Navigation Controller 的 Stack 中，即便未 show，
      *  此時仍可找到它的 property
      */
-    @IBAction func uwindToA(_ segue: UIStoryboardSegue) {
+    @IBAction func unwindToA(_ segue: UIStoryboardSegue) {
 //        if let vc = segue.source as? BViewController,
 //           let text = vc.bTextField.text {
 //            aLabel.text = text
